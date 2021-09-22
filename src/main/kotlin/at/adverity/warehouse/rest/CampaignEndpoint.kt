@@ -33,7 +33,7 @@ class CampaignEndpoint(
         assert(filterByFields.size == filterByValues.size)
         val campaignData = QCampaignData.campaignData
 
-        val predicate = createFilterProdicate(
+        val predicate = createFilterPredicate(
             filterByFields,
             filterByValues,
             campaignData
@@ -58,7 +58,7 @@ class CampaignEndpoint(
         assert(filterByFields.size == filterByValues.size)
 
         val campaignData = QCampaignData.campaignData
-        val predicate = createFilterProdicate(
+        val predicate = createFilterPredicate(
             filterByFields,
             filterByValues,
             campaignData
@@ -118,7 +118,7 @@ class CampaignEndpoint(
         }
     }
 
-    private fun createFilterProdicate(filterByFields: List<FilterByParam>,
+    private fun createFilterPredicate(filterByFields: List<FilterByParam>,
                                       filterByValues: List<String>,
                                       campaignData: QCampaignData
     ): BooleanBuilder {
