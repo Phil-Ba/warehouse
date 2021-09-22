@@ -2,7 +2,9 @@ package at.adverity.warehouse.entity
 
 import java.time.LocalDate
 import java.util.*
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.Version
 
 @Entity
 class CampaignData(
@@ -15,7 +17,7 @@ class CampaignData(
     val impressions: Long
 ) {
     @Version
-    private val version:Long? = null
+    private val version: Long? = null
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

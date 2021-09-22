@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.io.File
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 private val logger = KotlinLogging.logger {}
 
@@ -18,7 +17,6 @@ class CsvParserService(private val campaignDataRepository: CampaignDataRepositor
 
     @Transactional
     fun importData() {
-        println(File("src/main/resources/PIxSyyrIKFORrCXfMYqZBI.csv").exists())
         val data = csvReader().readAllWithHeader(File("src/main/resources/PIxSyyrIKFORrCXfMYqZBI.csv"))
             .map {
                 CampaignData(
@@ -32,10 +30,9 @@ class CsvParserService(private val campaignDataRepository: CampaignDataRepositor
                     impressions = it["Impressions"]!!.toLong()
                 )
             }
-        logger.info(
-            "Imported data[{}]",
-            data
-        )
+        logger.info {
+            "Imported data[$data]"
+        }
         campaignDataRepository.saveAll(data)
     }
 }

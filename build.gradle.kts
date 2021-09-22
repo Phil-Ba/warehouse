@@ -12,7 +12,7 @@ plugins {
 group = "at.adverity"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
-val queryDslVersion="5.0.+"
+val queryDslVersion = "5.0.+"
 
 repositories {
     mavenCentral()
@@ -39,7 +39,10 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict","-Xjvm-default=enable")
+        freeCompilerArgs = listOf(
+            "-Xjsr305=strict",
+            "-Xjvm-default=enable"
+        )
         jvmTarget = "11"
     }
 }

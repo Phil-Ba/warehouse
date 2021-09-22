@@ -4,6 +4,7 @@ Accept: application/json
 ###
 GET http://localhost:8080/campaigns?filterByFields=Campaign&filterByValues=Adventmarkt Touristik
 Accept: application/json
+
 ###
 
 GET http://localhost:8080/campaigns/aggregate?
@@ -20,6 +21,7 @@ GET http://localhost:8080/campaigns/aggregate?
  aggregateBy=Max&
  aggregateField=Clicks
 Accept: application/json
+
 ###
 
 GET http://localhost:8080/campaigns/aggregate?

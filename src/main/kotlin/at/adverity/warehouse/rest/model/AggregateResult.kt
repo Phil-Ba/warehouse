@@ -11,6 +11,8 @@ class AggregateResult(val result: String,
     )
 
     constructor(vararg result: String) : this(
-        result.dropLast(1).toString(),result.last()
+        result.dropLast(1)
+            .toString(),
+        result.last()
     )
 }

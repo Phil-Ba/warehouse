@@ -7,14 +7,12 @@ import at.adverity.warehouse.repository.CampaignDataRepository
 import at.adverity.warehouse.rest.model.*
 import com.querydsl.core.BooleanBuilder
 import com.querydsl.core.types.Expression
-import com.querydsl.core.types.Projections
 import com.querydsl.core.types.dsl.NumberPath
 import com.querydsl.jpa.impl.JPAQuery
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import java.lang.IllegalArgumentException
 import java.time.LocalDate
 import javax.persistence.EntityManager
 
