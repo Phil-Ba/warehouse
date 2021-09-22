@@ -1,0 +1,39 @@
+GET http://localhost:8080/campaigns?filterByFields=Campaign,Datasource&filterByValues=Adventmarkt Touristik,Facebook Ads
+Accept: application/json
+
+###
+GET http://localhost:8080/campaigns?filterByFields=Campaign&filterByValues=Adventmarkt Touristik
+Accept: application/json
+###
+
+GET http://localhost:8080/campaigns/aggregate?
+ groupByFields=Datasource&
+ aggregateBy=Max&
+ aggregateField=Clicks&
+ filterByFields=Campaign&
+ filterByValues=Adventmarkt Touristik
+Accept: application/json
+
+###
+GET http://localhost:8080/campaigns/aggregate?
+ groupByFields=Datasource,Campaign&
+ aggregateBy=Max&
+ aggregateField=Clicks
+Accept: application/json
+###
+
+GET http://localhost:8080/campaigns/aggregate?
+ aggregateBy=Max&
+ aggregateField=Campaign
+Accept: application/json
+
+###
+GET http://localhost:8080/campaigns/aggregate?
+ aggregateBy=Sum
+ &aggregateField=Impressions
+ &groupByFields=Campaign,Date
+ &filterByFields=Campaign
+ &filterByValues=Adventmarkt Touristik
+Accept: application/json
+22425
+40887
