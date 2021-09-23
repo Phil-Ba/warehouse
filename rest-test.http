@@ -1,13 +1,13 @@
-GET http://localhost:8080/campaigns?filterByFields=Campaign,Datasource&filterByValues=Adventmarkt Touristik,Facebook Ads
+GET http://{{host}}/campaigns?filterByFields=Campaign,Datasource&filterByValues=Adventmarkt Touristik,Facebook Ads
 Accept: application/json
 
 ###
-GET http://localhost:8080/campaigns?filterByFields=Campaign&filterByValues=Adventmarkt Touristik
+GET http://{{host}}/campaigns?filterByFields=Campaign&filterByValues=Adventmarkt Touristik
 Accept: application/json
 
 ###
 
-GET http://localhost:8080/campaigns/aggregate?
+GET http://{{host}}/campaigns/aggregate?
  groupByFields=Datasource&
  aggregateBy=Max&
  aggregateField=Clicks&
@@ -16,7 +16,7 @@ GET http://localhost:8080/campaigns/aggregate?
 Accept: application/json
 
 ###
-GET http://localhost:8080/campaigns/aggregate?
+GET http://{{host}}/campaigns/aggregate?
  groupByFields=Datasource,Campaign&
  aggregateBy=Max&
  aggregateField=Clicks
@@ -24,13 +24,13 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8080/campaigns/aggregate?
+GET http://{{host}}/campaigns/aggregate?
  aggregateBy=Max&
  aggregateField=Campaign
 Accept: application/json
 
 ###
-GET http://localhost:8080/campaigns/aggregate?
+GET http://{{host}}/campaigns/aggregate?
  aggregateBy=Sum
  &aggregateField=Impressions
  &groupByFields=Campaign,Date

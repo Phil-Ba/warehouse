@@ -7,7 +7,6 @@ import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.io.File
 import java.time.LocalDate
 
 private val logger = KotlinLogging.logger {}
@@ -17,7 +16,7 @@ class CsvParserService(private val campaignDataRepository: CampaignDataRepositor
 
     @Transactional
     fun importData() {
-        val data = csvReader().readAllWithHeader(File("src/main/resources/PIxSyyrIKFORrCXfMYqZBI.csv"))
+        val data = csvReader().readAllWithHeader(this::class.java.classLoader.getResourceAsStream("PIxSyyrIKFORrCXfMYqZBI.csv"))
             .map {
                 CampaignData(
                     datasource = it["Datasource"]!!,
